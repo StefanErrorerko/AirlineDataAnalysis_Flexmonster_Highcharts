@@ -172,5 +172,9 @@ p {
   color: #fff !important;
 }
 
+.highcharts-legend-item {
+  fill: yellow; 
+}
+
 @import url('https://cdn.flexmonster.com/theme/dark/flexmonster.min.css');
 

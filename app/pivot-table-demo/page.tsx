@@ -28,22 +28,32 @@ const corellationOptions = {
       type: 'line' 
   },
   title: {
-      text: 'Correlation'
+      text: ''
   },
   xAxis: {
       categories: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018], 
       title: {
           text: 'Years'
+      },
+      labels: {
+        style: {
+          color: '#ffffff' 
+        }
       }
   },
   yAxis: {
       title: {
           text: 'Correlation'
+      },
+      labels: {
+        style: {
+          color: '#ffffff' 
+        }
       }
   },
   series: [
       {
-          name: 'Series 1',
+          name: 'Correlation',
           data: [0.6733, 0.6533, 0.6820, 0.7262, 0.7372, 0.7468, 0.7694, 0.7804, 0.8037, 0.8539, 0.8735, 0.8929, 0.9137], 
       }
   ]
@@ -64,12 +74,27 @@ const yearOptions = {
       categories: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018], 
       title: {
           text: 'Years'
+      },
+      labels: {
+        style: {
+          color: '#ffffff' 
+        }
       }
   },
   yAxis: {
       title: {
           text: 'Landings'
+      },
+      labels: {
+        style: {
+          color: '#ffffff' 
+        }
       }
+  },
+  legend: {
+    itemStyle: {
+      color: '#ffffff'
+    }
   },
   series: [
     {
@@ -101,12 +126,27 @@ const monthOptions = {
       categories: ["January", "February", "March", "April", "May", "June", "July", "August", "Seprember", "October", "November", "December"], // Add your x-axis categories here
       title: {
           text: 'Years'
+      },      
+      labels: {
+        style: {
+          color: '#ffffff' 
+        }
       }
   },
   yAxis: {
       title: {
           text: 'Landings'
+      },      
+      labels: {
+        style: {
+          color: '#ffffff' 
+        }
       }
+  },
+  legend: {
+    itemStyle: {
+      color: '#ffffff'
+    }
   },
   series: [
     {
@@ -157,7 +197,7 @@ export default function WithHighcharts() {
               measures: [
                 {
                   uniqueName: 'Landing Count',
-                  aggregation: 'count', // Count the number of landings
+                  aggregation: 'count',
                 },
               ],
             },
@@ -169,7 +209,7 @@ export default function WithHighcharts() {
             };
             data.plotOptions = {
               pie: {
-                innerSize: '50%', // Set the inner radius here
+                innerSize: '50%',
                 dataLabels: {
                   enabled: true,
                   format: '<b>{point.name}</b>: {point.percentage:.1f} %',
@@ -196,7 +236,7 @@ export default function WithHighcharts() {
               measures: [
                 {
                   uniqueName: 'Landing Count',
-                  aggregation: 'count', // Count the number of landings
+                  aggregation: 'count', 
                 },
               ],
               
@@ -207,6 +247,22 @@ export default function WithHighcharts() {
                 type: 'bar',
                 backgroundColor: '#131313',
               };
+              data.xAxis = {
+                labels: {
+                  style: {
+                    color: '#ffffff', 
+                  },
+                },
+                categories: data.xAxis.categories
+              };
+              data.yAxis = {
+                labels: {
+                  style: {
+                    color: '#ffffff',
+                  },
+                },
+              };
+
                 Highcharts.chart('chart-frequency-airline', data);
             },
             (data: any) => {
@@ -236,7 +292,7 @@ export default function WithHighcharts() {
               measures: [
                 {
                   uniqueName: 'Total Landed Weight',
-                  aggregation: 'sum', // Count the number of landed weights
+                  aggregation: 'sum', 
                 },
               ],
             },
@@ -245,6 +301,7 @@ export default function WithHighcharts() {
             data.chart = {
               type: 'pie',
               backgroundColor: '#131313',
+              color: '#ffffff'
             };
               Highcharts.chart('chart-geo', data);
           },
@@ -264,7 +321,7 @@ export default function WithHighcharts() {
               measures: [
                 {
                   uniqueName: 'Landing Count',
-                  aggregation: 'count', // Count the number of landings
+                  aggregation: 'count', 
                 },
               ],
             },
@@ -286,7 +343,7 @@ export default function WithHighcharts() {
             slice: {
               rows: [
                 {
-                  uniqueName: 'Operating Airline',
+                  uniqueName: 'Activity Period',
                 },
               ],
               measures: [
@@ -301,6 +358,30 @@ export default function WithHighcharts() {
             data.chart = {
               type: 'line',
               backgroundColor: '#131313',
+            };
+            data.xAxis = {
+              labels: {
+                style: {
+                  color: '#ffffff',
+                },
+              },
+              categories: data.xAxis.categories
+            };
+            data.yAxis = {
+              labels: {
+                style: {
+                  color: '#ffffff',
+                },
+              },
+            };
+            data.plotOptions = {
+              series: {
+                dataLabels: {
+                  style: {
+                    color: '#ffffff'
+                  }
+                }
+              }
             };
               Highcharts.chart('chart-landed-weight', data);
           },
