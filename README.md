@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Next.js dashboard used in [article on DZone](https://dzone.com/articles/how-to-create-an-analytical-dashboard-with-nextjs)
 
 ## Getting Started
 
@@ -8,29 +8,31 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The dashboard represents dataset about Air Traffic Landing Statistics found [here](https://data.world/sanfrancisco/fpux-q53t). Here are some charts:
 
-## Learn More
+# Flight Frequency
+![image](https://github.com/user-attachments/assets/29a591f4-c6fe-45f7-9ef3-8f4811f4b191)
 
-To learn more about Next.js, take a look at the following resources:
+# Landing Time
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![image](https://github.com/user-attachments/assets/e6922bb1-700b-4697-98fc-189b44b799c9)
+![image](https://github.com/user-attachments/assets/dae78ed3-dc8b-4f69-9a98-0b5d2a2eb721)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Distribution of aircraft manufacturers
 
-## Deploy on Vercel
+![image](https://github.com/user-attachments/assets/25a527ea-9130-4209-84d9-63287414a602)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# How correlation index between landed weight and landing count changes throughout the year
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://github.com/user-attachments/assets/ff294266-f3c0-4daf-8c3d-ebc1031c2dce)
+
+
+
+
+
